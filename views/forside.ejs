@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hello</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.4/css/foundation.min.css">
+   <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+   <div id="header">
+      <div class="grid-container text-center">
+         <h5>PORTO DORITO</h5>
+       
+      </div>
+   </div>
+
+   <div id="content">
+         <div id="main">
+           <h1>Velkommen, <%= locals.username || 'bruger' %>!</h1>
+           <form method="POST" action="/users/logout">
+              <button class="button primary">Log ud</button>
+              <a class="button hollow" href="/edit-profile">Rediger profil</a>
+           </form>
+
+           <section>
+              <h4>Produkter</h4>
+              <a href="/produkter" class="button">Produkter</a>
+              <a href="/mine-produkter" class="button hollow">Mine produkter</a>
+              <a href="/opret-produkt" class="button hollow">Opret produkt</a>
+           </section>
+         </div>
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hello</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.4/css/foundation.min.css">
+   <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+
+   <div id="header">
+      <div class="grid-container text-center">
+         <h5>PORTO DORITO</h5>
+       
+      </div>
+   </div>
+
+   <div id="content">
+      <div id="main">
+         <form method="POST" action="/users/edit/<%= username %>?_method=PUT" class="form">
+            <h1>Rediger din profil</h1>
+            <label for="">
+               Nyt brugernavn
+               <input required type="text" placeholder="Nyt brugernavn" name="new_username">
+            </label>
+            <label for="">
+               Nyt password
+               <input required type="text" placeholder="Nyt password" name="new_password">
+            </label>
+            <input type="hidden" name="_method" value="put">
+            <button class="button primary">Godkend</button>
+            <a class="button secondary hollow" href="/forside">Tilbage</a>
+         </form>
+
+         <form id="delete" action="/users/delete/<%= username %>?_method=DELETE" method="POST">
+            <button class="button secondary alert">Slet profil</button>
+         </form>
+
+      </div>
+   </div>
+
+</body>
+
+</html>

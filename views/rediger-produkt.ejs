@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Redigér produkt</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.4/css/foundation.min.css">
+   <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+   <style>
+      .form {
+         max-width: 480px;
+         margin: 0 auto;
+         margin-top: 60px;
+      }
+   </style>
+
+   <div id="header">
+      <div class="grid-container text-center">
+         <h5>PORTO DORITO</h5>
+       
+      </div>
+   </div>
+
+   <div id="content">
+         <div id="sidebar">
+           
+         </div>
+         <div id="main">
+            <form class="form" action="/mine-produkter/<%= title %>?_method=PUT" method="POST">
+
+               <h4>Redigér Produkt</h4>
+               <label>
+                  Titel
+                  <input required type="text" name="title" placeholder="Titel" value="<%= title %>">
+               </label>
+               <label>
+                  Beskrivelse
+                  <input required type="text" name="desc" placeholder="Beskrivelse" value="<%= desc %>">
+               </label>
+               <label>
+                  Pris
+                  <input required type="number" name="price" placeholder="Pris" value="<%= price %>">
+               </label>
+               <label>
+                  Billede URL
+                  <input required type="url" name="image" placeholder="https://google.com/myimage.png" value="<%= image %>">
+               </label>
+               
+               <label>
+                  Kategorier
+                  <input required type="text" name="categories" placeholder="Kat1, Kat2" value="<%= categories %>">
+               </label>
+               
+               <div class="button-group">
+                  <input type="hidden" name="_method" value="put">
+                  <button class="button primary">Godkend</button>
+                  <a class="button secondary hollow" href="/mine-produkter">Tilbage</a>
+               </div>
+
+            </form>
+         </div>
+   </div>
+
+</body>
+</html>

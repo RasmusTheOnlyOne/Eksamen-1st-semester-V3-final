@@ -11,8 +11,8 @@ const port = 3000
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/assets'));
 app.use(methodOverride('_method'))
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+app.use( bodyParser.json() );       // Støtter JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // Støtter URL-encoded bodies
   extended: true
 })); 
 app.use(cookieParser());
@@ -24,7 +24,6 @@ app.get('/', (req, res) => {
    const { cookies } = req;
       // Tjekker om der er cookies sat
       if ( cookies.username && cookies.username.length > 0 ) {
-         console.log(req.cookies);
          // Sender respons om at redirecte til forside
          res.redirect('/forside');
       // Hvis ikke cookies sat

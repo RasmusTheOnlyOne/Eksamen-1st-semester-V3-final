@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Produkter</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.4/css/foundation.min.css">
+   <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+   <div id="header">
+      <div class="grid-container text-center">
+         <h5>PORTO DORITO</h5>
+       
+      </div>
+   </div>
+
+   <div id="content">
+         <div id="main">
+           <h1>Alle Produkter</h1>
+           <form action="" class="grid-x grid-margin-x">
+              <select class="cell small-10" name="kategori" id="">
+                 <option value="" default>Alle</option>
+                  <% kategorier.forEach(function(cat) { %> 
+                     <option value="<%= cat %>"><%= cat %></option>
+                  <% }) %>
+              </select>
+              <button class="cell small-2 shrink button primary" type="submit">Vis resultater</button>
+           </form>
+           <section>
+              <% produkter.forEach(function(produkt){ %>
+                  <div class="produkt">
+                     <img src="<%= produkt.image %>" alt="">
+                     <div class="content">
+                        <h4><%= produkt.title %></h4>
+                        <p><%= produkt.desc %></p>
+                        <p> Kategorier: 
+                           <% produkt.categories.forEach(function(cat) { %>
+                              <span><%= cat %>, </span>
+                           <% }) %>
+                        </p>
+                        <strong><%= produkt.price %> DKK</strong>
+                     </div>
+                  </div>
+               <% }); %>
+           </section>
+         </div>
+   </div>
+
+</body>
+</html>

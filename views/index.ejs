@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hello</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.4/css/foundation.min.css">
+   <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+   <div id="header">
+      <div class="grid-container text-center">
+         <h5>PORTO DORITO</h5>
+       
+      </div>
+   </div>
+
+   <div id="content">
+         <div id="main">
+             <!-- Login Form -->
+             <form id="login" method="POST" action="/users/login">
+               <h4>login</h4>
+               <label for="username">
+                  Brugernavn
+                  <input type="text" name="username" placeholder="Brugernavn">
+               </label>
+               <label for="password">
+                  Password
+                  <input type="password" name="password" placeholder="Password">
+               </label>
+               <div class="button-group">
+                  <button class="button primary">Login</button>
+                  <a class="button secondary hollow" href="/register">Register</a>
+               </div>
+               <p class="error"><%= locals.errorMessage %></p>
+            </form>
+         </div>
+   </div>
+
+</body>
+</html>
